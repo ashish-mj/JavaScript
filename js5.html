@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <!--Add javascript, CSS, title-->
+        <script></script>
+        <style type="text/css">
+            #form{
+                margin-left: 25%;
+                margin-top: 10%;
+                border-style: solid;
+                width: 300px;
+                padding: 2%;
+               border-color:darkred;
+               background-color:pink;
+            }
+        </style>
+        <script type="text/javascript">
+            var objects=new Array;
+            function readFormData(){
+                
+                var name=document.getElementById("name").value;
+                var address=document.getElementById("address").value;
+                var email=document.getElementById("email").value
+               var genderNodes=document.getElementsByName("gender")//returns the array nodes..
+               var gender="";
+               for(i in genderNodes){
+                    if(genderNodes[i].checked==true){
+                        gender=genderNodes[i].value;
+                    }
+               }
+            /*   var c=new Object();
+               c.name=name;
+               c.address=address;
+               c.email=email;
+               c.gender=gender;*/
+               var c=new customer(name,address,email,gender);
+               objects.push(c);
+    
+                
+            }
+            function customer(name,address,email,gender){
+                this.name=name;
+                this.address=address;
+                this.email=email;
+                this.gender=gender;
+            }
+
+            function Display(){
+
+                for (var i=0;i<objects.length;i++){
+                    //var divElement=document.getElementById("formData");
+                    var data="Name:"+objects[i].name;
+                    data=data+"Address : "+objects[i].address;
+                    data=data+"Email : "+objects[i].email;
+                    data=data+"Gender : "+objects[i].gender;
+                    //divElement.innerHTML=data;  
+                    console.log(data);
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <div id="form">
+        <table>
+        <tr>
+           <td> <label>Enter Name</label></td> <td> <input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td> <label>Enter Address</label> </td><td><input type="text" id="address"></td>
+        </tr>
+        <tr>
+        <td>  <label>Gender</label> </td> <td>Male<input type="radio" name="gender" value="Male"> Female<input type="radio" name="gender" value="Female"></td>
+    </tr>
+        <tr>
+        <td>  <label>Enter Email</label></td>  <td><input type="text" id="email"></td>
+    </tr>
+        <tr>
+           <td></td> <td><input type="button" value="ENTER" onclick="readFormData()"></td>
+        </tr>
+        <tr>
+            <td></td> <td><input type="button" value="Display" onclick="Display()"></td>
+         </tr>
+    </table>
+    </div>
+
+    <div id="formData">
+        data will print here ...
+
+    </div>
+    </body>
+</html>
