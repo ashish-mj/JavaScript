@@ -11,14 +11,44 @@
                     margin-right: 450px;
                     border-radius: 20px;
                     border-style: solid;
-                    border-color: darkgoldenrod;
+                    border-color: #000;
                     background-color: dimgray;
                     padding: 50px;
                 }
             </style>
 
             <script type="text/javascript">
+                 function readform(){
+                       var name=document.getElementById("name").value;
+                       var address=document.getElementById("address").value;
+                       var email=document.getElementById("email").value;
+                       var genderNodes=document.getElementsByName("gender");
+                       
+                        var gender="";
+                        for(i in genderNodes){
+                            console.log(genderNodes[i].checked);
+                                if(genderNodes[i].checked==true){
+                                    gender=genderNodes[i].value;
+                                }
+                        }
+                        var divElement=document.getElementById("formData");
+                        var data="Name:"+name;
+                        data=data+"<br> Address : "+address;
+                        data=data+"<br> Email : "+email;
+                        data=data+"<br>Gender : "+gender;
+                        divElement.innerHTML=data;
 
+
+                       console.log(name);
+                       console.log(address);
+                       console.log(email);
+                       console.log(gender);
+
+                       
+                       
+
+
+                 }
             </script>
             <form id="form">
                 <table>
@@ -33,15 +63,18 @@
                          <td>  <label>Enter Email</label></td>  <td><input type="text" id="email"></td>
                     </tr>
                     <tr>
-                         <td>  <label>Gender</label> </td> <td>Male<input type="radio" name="gender" value="man"> Female<input type="radio" name="gender" value="female"></td>
+                         <td>  <label>Gender</label> </td> <td>Male<input type="radio" name="gender" value="male"> Female<input type="radio" name="gender" value="female"></td>
                     </tr>
                     <tr>
-                        <td></td> <td><input type="button" value="Submit"></td>
+                        <td></td> <td><input type="button" value="Submit" onclick="readform()"></td>
                      </tr>
             </table>
             </form>
         </div>
-
+        <div id="formData">
+            DATA
+    
+        </div>
 
     </body>
 </html>
