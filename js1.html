@@ -18,10 +18,30 @@
                 console.log(num[i]);
             }
 
-            console.log("Traditional loop")
+            console.log("for each loop")
             for(i in num){
                 console.log(num[i]);
             }
+
+            function print(x){
+                console.log(x);
+            }
+           
+            console.log("higher order function 1")
+             num.forEach(print);
+             
+             console.log("higher order function 2")
+             num.forEach( function print (x){console.log(x)});
+
+             console.log("higher order function 3")
+             num.forEach( function (x){console.log(x)});
+             
+           
+            names=["Ashish","Akshay","Albin"];
+
+
+            console.log("Arrow functions");
+            names.forEach(x=>console.log(x));
                
         
         </script>
