@@ -42,8 +42,28 @@
 
             console.log("Arrow functions");
             names.forEach(x=>console.log(x));
-               
-        
+
+
+            names[10]="Dheeraj";
+       
+            console.log("---------------------Arrow functions---------------------------");
+            names.forEach(x=>console.log(x));
+            console.log("------------------------------------------------");
+           
+           
+           
+            console.log("-------------------Traditional loop-------------------");
+            for (i=0;i<names.length;i++){
+                console.log(names[i]);
+            
+            }
+            console.log("------------------------------------------------");
+            console.log("---------------------------------For Each-----------------");
+            for (i in names){
+                console.log(names[i]);
+            }
+            console.log("------------------------------------------------");   
+         
         </script>
      </head>
      <body>
