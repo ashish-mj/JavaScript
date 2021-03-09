@@ -4,20 +4,36 @@
     </head>
     <body>
         <div>
-            <form>
+            <style>
+                #form{
+                    margin-top: 200px;
+                    margin-left: 450px;
+                    margin-right: 450px;
+                    border-radius: 20px;
+                    border-style: solid;
+                    border-color: darkgoldenrod;
+                    background-color: dimgray;
+                    padding: 50px;
+                }
+            </style>
+
+            <script type="text/javascript">
+
+            </script>
+            <form id="form">
                 <table>
                     <tr>
-                        <td> <label>Enter Name</label></td> <td> <input type="text"></td>
+                        <td> <label>Enter Name</label></td> <td> <input type="text" id="name"></td>
                     </tr>
                     <tr>
-                         <td> <label>Enter Address</label> </td><td><input type="text"></td>
+                         <td> <label>Enter Address</label> </td><td><input type="text" id="address"></td>
                     </tr>
 
                     <tr>
-                         <td>  <label>Enter Email</label></td>  <td><input type="text"></td>
+                         <td>  <label>Enter Email</label></td>  <td><input type="text" id="email"></td>
                     </tr>
                     <tr>
-                         <td>  <label>Gender</label> </td> <td>Male<input type="radio" name="gender"> Female<input type="radio" name="gender"></td>
+                         <td>  <label>Gender</label> </td> <td>Male<input type="radio" name="gender" value="man"> Female<input type="radio" name="gender" value="female"></td>
                     </tr>
                     <tr>
                         <td></td> <td><input type="button" value="Submit"></td>
