@@ -11,6 +11,21 @@
                 padding: 2%;
                border-color:darkred;
                background-color:pink;
+               float: left;
+            }
+            #customersListDiv{
+                    margin-top: 5%;
+                    width: 500px;
+                    float:right;
+                    border-style: solid;
+                    border-color:darkred;
+                     background-color:pink;
+            }
+            .customer{
+                border-style: solid;
+                border-color:goldenrod;
+                background-color: khaki;
+
             }
         </style>
         <script type="text/javascript">
@@ -34,6 +49,7 @@
                c.gender=gender;*/
                var c=new customer(name,address,email,gender);
                objects.push(c);
+               Display();
     
                 
             }
@@ -45,16 +61,17 @@
             }
 
             function Display(){
-
-                for (var i=0;i<objects.length;i++){
-                    //var divElement=document.getElementById("formData");
-                    var data="Name:"+objects[i].name;
-                    data=data+"Address : "+objects[i].address;
-                    data=data+"Email : "+objects[i].email;
-                    data=data+"Gender : "+objects[i].gender;
-                    //divElement.innerHTML=data;  
-                    console.log(data);
-                }
+                document.getElementById("customersListDiv").innerHTML="";
+                objects.forEach(c=>createCustomerBlock(c));
+            }
+            function createCustomerBlock(c){
+                var customersListDiv=document.getElementById("customersListDiv");
+                var divNode=document.createElement("div");
+                divNode.setAttribute("class","customer");
+                var data="Name :"+c.name+"Email :"+c.email+"Address : "+c.address+"Gender"+c.gender;
+                var txtNode=document.createTextNode(data);
+                divNode.appendChild(txtNode);
+                customersListDiv.appendChild(divNode);
 
             }
         </script>
@@ -77,15 +94,13 @@
         <tr>
            <td></td> <td><input type="button" value="ENTER" onclick="readFormData()"></td>
         </tr>
-        <tr>
-            <td></td> <td><input type="button" value="Display" onclick="Display()"></td>
-         </tr>
+        
     </table>
     </div>
 
-    <div id="formData">
-        data will print here ...
-
-    </div>
+    <div id="customersListDiv">
+        customers list will display here ...
+  
+      </div>
     </body>
 </html>

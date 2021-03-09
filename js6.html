@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Image</title>
+    </head>
+    <script type="text/javascript">
+    var images=["images/1.jpeg","images/2.jpg","images/3.jpeg","images/4.jpeg","images/5.jpeg"]
+    var status=parseInt("0");
+      function display(){
+                document.getElementById("imageDisplay").innerHTML="";
+                var imgListDiv=document.getElementById("imageDisplay");
+                var imgNode=document.createElement("img");
+                imgNode.setAttribute("src",images[parseInt(status)]);
+                imgListDiv.appendChild(imgNode);
+                
+      }
+
+
+      function increment(){
+        //document.getElementById("imageDisplay").innerHTML="";
+        status ++;
+          if (status<=4){
+              
+              console.log("if block Increment"+status);
+              display();
+          }
+          else{
+              status=parseInt(4);
+              console.log("else block Increment"+status);
+              display();
+          }
+
+      }
+        
+          function decrement(){
+            //document.getElementById("imageDisplay").innerHTML="";
+            status --;
+          if (status>=0){
+            
+              console.log("if block Decrement"+status);
+              display();
+    
+          }
+          else{
+              status=parseInt(0);
+              console.log("else block Decrement"+status);
+              display();
+          }
+      }
+
+      
+    
+    </script>
+    <body onload="display()">
+            <button onclick="decrement()">Prev</button>
+            <button onclick="increment()">Next</button>
+        
+        <div id="imageDisplay">
+        
+        </div>
+
+    </body>
+
+
+</html>
