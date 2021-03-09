@@ -1,0 +1,26 @@
+<html>
+<head>
+    <script type="text/javascript">
+        function f1(a,b,c){
+            console.log("hello")
+            console.log(a,b,c);
+        }
+
+        function f1(a){
+            console.log("Good Evening ..")
+            console.log(a)
+            console.log("No of arguments : "+arguments.length)
+           for(i in arguments)
+                console.log(arguments[i]);
+            
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="Click me" onclick="f1(10,20,30)">
+
+    <input type="button" value="Click me" onclick="f1(99)">
+    <input type="button" value="Click me" onclick="f1(99,1,2,3,4,5,6,7,8,5,44,33,33)">
+</body>
+</html>
