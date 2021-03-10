@@ -1,0 +1,40 @@
+<html>
+    <head>
+            <script type="text/javascript">
+                var emp= {"id":"111","name":"Albin","city":"Bangalore"};
+                console.log(emp.id,emp.name,emp.city);
+                var empList=[{"id":"111","name":"Albin","city":"Bangalore"},
+                            {"id":"112","name":"Ashish","city":"Bangalore"},
+                            {"id":"113","name":"Avinash","city":"Bangalore"},
+                            {"id":"114","name":"Charan","city":"Bangalore"},
+                            {"id":"115","name":"Darshan","city":"Bangalore"}
+                            ];
+                            console.log("========================")
+                    empList.forEach(e=>console.log(e.name))
+                //converts object to String..
+                   let jsonTxt= JSON.stringify(emp);  //this jsonTxt will be send to server..
+            
+                   console.log(jsonTxt);
+                   console.log(jsonTxt.id);
+                   let c=new Object();
+                   c.custId=111;
+                   c.custName="ABC";
+                   let jsonTxt2=JSON.stringify(c);
+                   console.log(jsonTxt2);
+                   let custObj=JSON.parse(jsonTxt2); //converts JSON text to Object
+                   console.log(custObj.custName);
+
+                //Accepts a array and it returns a another array ...
+                   var namesList=empList.map(e=>e.name);
+                   console.log(namesList);
+                   var nums=[2,3,4,5,6];
+                   //returns a another array .. which has the sqrs of each element
+                   var sqrs=nums.map(n=>n*n);
+                   console.log(sqrs);
+            </script>
+    </head>
+    <body>
+
+
+    </body>
+</html>
